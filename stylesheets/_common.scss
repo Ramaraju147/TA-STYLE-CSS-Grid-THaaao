@@ -1,0 +1,131 @@
+/* common */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.text-center{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: $primary;
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+p{
+    margin: 1rem 0rem;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0rem 2rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(6rem,1fr));
+    justify-items:center;
+}
+
+.active-link{
+    color:$secondary;
+    padding-top: 1.5rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    grid-template-areas: "header-nav header-nav header-nav"
+                         "title-1 title-2 title-3"
+                         "title-4 title-2 title-5"
+                         "title-4 title-2 title-6";
+}
+
+@media screen and (max-width: 1007px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        grid-template-areas: "header-nav header-nav"
+                             "title-1 title-3"
+                             "title-4 title-5"
+                             "title-4 title-6"
+                             "title-2 ."
+                             "title-2 ."
+                             "title-2 .";
+    } 
+}
+
+@media screen and (max-width: 768px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+        grid-template-areas: "header-nav"
+                             "title-1"
+                             "title-4"
+                             "title-4"
+                             "title-2"
+                             "title-2"
+                             "title-2"
+                             "title-3"
+                             "title-5"
+                             "title-6";
+    } 
+}
