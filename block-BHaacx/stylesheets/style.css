@@ -1,0 +1,534 @@
+/* common */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.full-width img {
+  width: 100%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-auto-rows: 2rem;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "home home stimulus stimulus" "donec donec about skills" "id ms app cd" "experience experience experience-info experience-info" "education-info education-info education education" "contact-form contact-form contact contact-info" "map map map map" "footer footer footer footer";
+}
+
+.padding {
+  padding: 3rem;
+}
+
+.justify-right {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.primary-btn {
+  color: #273131;
+  padding: 1rem 2rem;
+  border: 2px solid #273131;
+  border-radius: 2rem;
+  width: 10rem;
+  background: none;
+  font-size: 1rem;
+}
+
+.secondary-btn {
+  color: #273131;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  width: 10rem;
+  background: white;
+  font-size: 1rem;
+}
+
+p {
+  color: #797675;
+  line-height: 1.3;
+  font-size: 1.2rem;
+  margin: 1rem 0rem;
+}
+
+.active {
+  color: #edba6b;
+}
+
+.text-center {
+  text-align: center;
+}
+
+i {
+  font-size: 2rem;
+}
+
+.card-block {
+  color: white;
+  padding: 3rem;
+}
+
+.card-block i {
+  margin-bottom: 2rem;
+}
+
+.card-block p {
+  color: white;
+}
+
+.experience-info, .education-info {
+  color: white;
+}
+
+.experience-info p, .education-info p {
+  color: white;
+}
+
+.experience-info i, .education-info i {
+  margin-right: 2rem;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+  .header {
+    position: relative;
+  }
+  .header-nav {
+    display: none;
+  }
+  .header .bars {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+  }
+  input[type="checkbox"]:checked ~ .header-nav {
+    display: block;
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 12rem;
+    padding: 3rem 10rem;
+  }
+  input[type="checkbox"]:checked ~ .header-nav li {
+    margin-top: 1.5rem;
+  }
+  input[type="checkbox"]:checked ~ .header-nav a {
+    color: white;
+  }
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "stimulus stimulus" "donec donec" "about skills" "id ms" "app cd" "experience experience" "experience-info experience-info" "education-info education-info" "education education" "contact-form contact-form" "contact contact-info" "map map" "footer footer";
+  }
+  .column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/* header */
+.header {
+  margin-top: 3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bars {
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+h1 {
+  color: #273131;
+  font-size: 2rem;
+}
+
+.header-nav a {
+  color: #797675;
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+}
+
+/* about image */
+.home {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: home;
+  background: url("../assets/media/home-img.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.stimulus-text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: stimulus;
+  background: #f5e4d8;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  height: 50rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+/* donec */
+.donec {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: donec;
+}
+
+/* about */
+.about {
+  background: url("../assets/media/about-img.jpg");
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: about;
+  background-size: cover;
+  background-position: center;
+}
+
+/* skills */
+.skills {
+  background: #edba6b;
+  color: white;
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: skills;
+}
+
+.skills .skillset p {
+  color: #273131;
+}
+
+.line-90 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(90%, #273131), color-stop(10%, white));
+  background: linear-gradient(to right, #273131 90%, white 10%);
+  height: 0.5rem;
+}
+
+.line-80 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(80%, #273131), color-stop(20%, white));
+  background: linear-gradient(to right, #273131 80%, white 20%);
+  height: 0.5rem;
+}
+
+.line-70 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(70%, #273131), color-stop(30%, white));
+  background: linear-gradient(to right, #273131 70%, white 30%);
+  height: 0.5rem;
+}
+
+/* ID */
+.id {
+  background: #edba6b;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: id;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.ms {
+  background: #fc683d;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: ms;
+}
+
+.app {
+  background-color: black;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: app;
+}
+
+.cd {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: cd;
+  color: #273131;
+}
+
+.cd p {
+  color: #273131;
+}
+
+/* experience */
+.experience {
+  background: url("../assets/media/experience-img.jpg");
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: experience;
+  height: 30rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.experience-info {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: experience-info;
+  background: #fc683d;
+}
+
+.role {
+  padding-top: 2rem;
+}
+
+.date {
+  color: #273131;
+  font-size: 1.2rem;
+}
+
+/* Education */
+.education-info {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: education-info;
+  background: #edba6b;
+}
+
+.education {
+  background: url("../assets/media/education-img.jpg");
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: education;
+  background-size: cover;
+  background-position: center;
+}
+
+/* contact-form */
+.contact-form {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: contact-form;
+  background-color: #fc683d;
+  color: white;
+}
+
+.contact-form p {
+  color: white;
+}
+
+input[type="text"], textarea {
+  border: none;
+  border-bottom: 2px solid #edba6b;
+  display: block;
+  width: 80%;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #fc683d;
+}
+
+input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: white;
+  font-size: 1rem;
+}
+
+input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: white;
+  font-size: 1rem;
+}
+
+input[type="text"]::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: white;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder, textarea::placeholder {
+  color: white;
+  font-size: 1rem;
+}
+
+.contact {
+  background: url("../assets/media/contact-img.jpg");
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: contact;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-info {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+  grid-area: contact-info;
+  background: black;
+  color: white;
+}
+
+.contact-info p {
+  color: white;
+}
+
+.contact-info i {
+  margin-right: 1.5rem;
+}
+
+.contact-info .contact-details {
+  margin-top: 2rem;
+}
+
+.contact-info .detail {
+  margin-top: 1rem;
+}
+
+/* map */
+.map {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: map;
+  background: #fc683d;
+}
+
+.map iframe {
+  height: 25rem;
+}
+
+/* footer */
+.footer {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+  height: 10rem;
+}
+
+.footer .footer-container {
+  width: 30%;
+}
+
+.footer .footer-container p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer .footer-container i {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=style.css.map */

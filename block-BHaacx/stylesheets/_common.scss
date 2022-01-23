@@ -1,0 +1,232 @@
+/* common */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container{
+    margin: 0 auto;
+    width: 90%;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+li{
+    list-style: none;
+}
+
+.full-width{
+    img{
+       width: 100%;
+    }
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(6rem,1fr));
+    align-content: center;
+    grid-auto-rows: 2rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: "home home stimulus stimulus"
+                         "donec donec about skills"
+                         "id ms app cd"
+                         "experience experience experience-info experience-info"
+                         "education-info education-info education education"
+                         "contact-form contact-form contact contact-info"
+                         "map map map map"
+                         "footer footer footer footer";
+}
+
+.padding{
+    padding: 3rem;
+}
+
+.justify-right{
+    justify-content: right;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.primary-btn{
+    color: $primary;
+    padding: 1rem 2rem;
+    border: 2px solid $primary;
+    border-radius: 2rem;
+    width: 10rem;
+    background: none;
+    font-size: 1rem;
+}
+
+.secondary-btn{
+    color: $primary;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    width: 10rem;
+    background: $white;
+    font-size: 1rem;
+}
+
+p{
+    color: $secondary;
+    line-height: 1.3;
+    font-size: 1.2rem;
+    margin: 1rem 0rem;
+}
+
+.active{
+    color: $active;
+}
+
+.text-center{
+    text-align: center;
+}
+
+i{
+    font-size: 2rem;
+}
+
+.card-block{
+    color: $white;
+    padding: 3rem;
+    i{
+        margin-bottom: 2rem;
+    }
+    p{
+        color: $white;
+    }
+}
+
+%qualification{
+    color: $white;
+    p{
+        color: $white;
+    }
+    i{
+        margin-right: 2rem;
+        font-size: 2.5rem;
+    }
+}
+
+@mixin background{
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px){
+    html{
+        font-size: 12px;
+    }
+    .header{
+        position: relative;
+    }
+    .header-nav{
+        display: none;
+    }
+    .header .bars{
+        display:inline-block;
+        position: relative;
+        z-index: 100;
+    }
+
+    input[type="checkbox"]:checked ~ .header-nav{
+        display: block;
+        position: absolute;
+        z-index:50;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background: rgba(0,0,0,0.5);
+        margin-top:12rem;
+        padding:3rem 10rem;
+        li{
+            margin-top: 1.5rem;
+        }
+        a{
+            color: white;
+        }
+    }
+    
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+                             "stimulus stimulus"
+                             "donec donec"
+                             "about skills"
+                             "id ms"
+                             "app cd"
+                             "experience experience"
+                             "experience-info experience-info"
+                             "education-info education-info"
+                             "education education"
+                             "contact-form contact-form"
+                             "contact contact-info"
+                             "map map"
+                             "footer footer";
+    }
+
+    .column{
+        flex-direction: column;
+    }
+}
