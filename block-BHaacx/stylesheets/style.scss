@@ -1,0 +1,245 @@
+@import "variable";
+@import "common";
+
+/* header */
+
+.header{
+    margin-top: 3rem;
+    position: absolute;
+    left: 0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.bars{
+    display:none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+h1{
+    color: $primary;
+    font-size: 2rem;
+}
+
+.header-nav{
+    a{
+        color: $secondary;
+        font-size: 1.2rem;
+        margin-right: 1.5rem;
+    }
+}
+
+/* about image */
+
+.home{
+    grid-area: home;
+    background: url("../assets/media/home-img.jpg");
+    @include background;
+}
+
+.stimulus-text{
+    grid-area: stimulus;
+    background: rgb(245,228,216);
+    display: grid;
+    place-content: center;
+    justify-items: start;
+    height: 50rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+/* donec */
+
+.donec{
+    grid-area: donec;
+}
+
+/* about */
+
+.about{
+    background: url("../assets/media/about-img.jpg");
+    grid-area: about;
+    @include background;
+}
+
+/* skills */
+
+.skills{
+    background: $active;
+    color: $white;
+    .skillset{
+        p{
+            color: $primary;
+        }
+    }
+    grid-area: skills
+}
+
+
+.line-90{
+    background: linear-gradient(to right,$primary 90%,$white 10%);
+    height: 0.5rem;
+}
+
+.line-80{
+    background: linear-gradient(to right,$primary 80%,$white 20%);
+    height: 0.5rem;
+}
+
+.line-70{
+    background: linear-gradient(to right,$primary 70%,$white 30%);
+    height: 0.5rem;
+}
+
+/* ID */
+
+.id{
+    background: $active;
+    grid-area: id
+}
+
+h3{
+    font-size: 2rem;
+}
+
+.ms{
+    background: $tertiary;
+    grid-area: ms;
+}
+
+.app{
+    background-color: $black;
+    grid-area: app;
+}
+
+.cd{
+    grid-area: cd;
+    color: $primary;
+    p{
+        color: $primary;
+    }
+}
+
+/* experience */
+
+.experience{
+    background: url("../assets/media/experience-img.jpg");
+    grid-area: experience;
+    height: 30rem;
+    @include background;
+}
+
+.experience-info{
+    @extend %qualification;
+    grid-area: experience-info;
+    background: $tertiary;
+}
+
+.role{
+    padding-top: 2rem;
+}
+
+.date{
+    color: $primary;
+    font-size: 1.2rem;
+}
+
+/* Education */
+
+.education-info{
+    @extend %qualification;
+    grid-area: education-info;
+    background: $active;
+}
+
+.education{
+    background: url("../assets/media/education-img.jpg");
+    grid-area: education;
+    @include background;
+}
+
+/* contact-form */
+
+.contact-form{
+    grid-area: contact-form;
+    background-color: $tertiary;  
+    color: $white;
+    p{
+        color: $white;
+    }
+}
+
+input[type="text"],textarea{
+    border: none;
+    border-bottom: 2px solid $active;
+    display: block;
+    width: 80%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: $tertiary;
+    &::placeholder{
+        color: white;
+        font-size: 1rem;
+    }
+}
+
+.contact{
+    background: url("../assets/media/contact-img.jpg");
+    grid-area: contact;
+    @include background;
+}
+
+
+.contact-info{
+    grid-area: contact-info;
+    background: $black;
+    color: white;
+    p{
+        color: $white;
+    }
+    i{
+        margin-right: 1.5rem;
+    }
+    .contact-details{
+        margin-top: 2rem;
+    }
+    .detail{
+        margin-top: 1rem;
+    }
+}
+
+/* map */
+
+.map{
+    grid-area: map;
+    background: $tertiary;
+    iframe{
+    height: 25rem;
+    }
+}
+
+/* footer */
+
+.footer{
+    grid-area: footer;
+    height: 10rem;
+    .footer-container{
+        width: 30%;
+        p{
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        i{
+            margin-right:1rem;
+        }
+    }
+}
+
+
